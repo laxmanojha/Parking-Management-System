@@ -1,0 +1,147 @@
+#include<iostream>
+#include<conio.h>
+using namespace std;
+int main(){
+    int x;
+    k:
+    int m_cnt=0,r_cnt=0,c_cnt=0,b_cnt=0,t_cnt=0;
+    int m_amount=0,r_amount=0,c_amount=0,b_amount=0,t_amount=0;
+    h:
+    cout<<"\n\n\t PARKING Management SYSTEM";
+    cout<<"\n\n 1.Motorcycle";
+    cout<<"\n\n 2.Rikshaw";
+    cout<<"\n\n 3.Car";
+    cout<<"\n\n 4.Bus";
+    cout<<"\n\n 5.Check Record";
+    cout<<"\n\n 6.Delete Vehical";
+    cout<<"\n\n 7.Delete Record";
+    cout<<"\n\n 8.Exit";
+    cout<<"\n\n Enter Your Choice :";
+    cin>>x;
+    switch(x){
+     case 1:
+        {
+            if(t_cnt<100){
+               m_cnt++;
+               m_amount+=50;
+               t_cnt++;
+               t_amount+=50;
+               cout<<"\n\n Motorcycle Successfully Parked"<<endl;
+            }
+            else
+                cout<<"Parking is Full"<<endl;
+            break;
+        }
+        case 2:
+        {
+            if(t_cnt<100){
+               r_cnt++;
+               r_amount+=100;
+               t_cnt++;
+               t_amount+=100;
+               cout<<"\n\n Rikshaw Successfully Parked";
+            }
+            else
+                cout<<"Parking is Full"<<endl;
+            break;
+        }
+        case 3:
+        {
+            if(t_cnt<100){
+               c_cnt++;
+               c_amount+=150;
+               t_cnt++;
+               t_amount+=150;
+               cout<<"\n\n Car Successfully Parked";
+            }
+            else
+                cout<<"Parking is Full"<<endl;
+            break;
+        }
+        case 4:
+        {
+            if(t_cnt<100){
+               b_cnt++;
+               b_amount+=200;
+               t_cnt++;
+               t_amount+=200;
+               cout<<"\n\n Bus Successfully Parked";
+            }
+            else
+                cout<<"Parking is Full"<<endl;
+            break;
+        }
+        case 5:
+        {
+            if(t_cnt>0){
+               system("cls");
+               cout<<"\n\n Check Record"<<endl;
+               cout<<"\n\n Motorcycle in Parking:"<<m_cnt;
+               cout<<"\n\n Amount of Motorcycle in Parking:"<<m_amount;
+               cout<<"\n\n Rikshaw in Parking:"<<r_cnt;
+               cout<<"\n\n Parking Amount of rikshaw:"<<r_amount;
+               cout<<"\n\n Car in Parking:"<<c_cnt;
+               cout<<"\n\n Parking Amount of Car:"<<c_amount;
+               cout<<"\n\n Bus in Parking:"<<b_cnt;
+               cout<<"\n\n Parking Amount of Bus:"<<b_amount;
+               cout<<"\n\n Total Vehical in Parking:"<<t_cnt;
+               cout<<"\n\n Total Parking Amount of Vehical:"<<t_amount;
+               }
+            else
+                cout<<"Parking is Empty"<<endl;
+        break;
+        }
+        case 6:
+        {
+                p:
+                system("cls");
+                cout<<"\n\n Delete Vehical";
+                cout<<"\n\n 1.Motorcycle";
+                cout<<"\n\n 2.Rikshaw";
+                cout<<"\n\n 3.Car";
+                cout<<"\n\n 4.Bus";
+                cout<<"\n\n 5.Check Record";
+                cin>>x;
+                if(x==1){
+                   m_cnt--;
+                   t_cnt--;
+                   cout<<"Motorcycle Successfully Removed";
+                   }
+                else if(x==2){
+                   r_cnt--;
+                   t_cnt--;
+                   cout<<"Rikshaw Successfully Removed";
+                   }
+                else if(x==3){
+                   c_cnt--;
+                   t_cnt--;
+                   cout<<"Car Successfully Removed";
+                   }
+                else if(x==4){
+                   b_cnt--;
+                   t_cnt--;
+                   cout<<"Bus Successfully Removed";
+                   }
+                else
+                {
+                    cout<<"Invalid Choice...Please Try Again.."<<endl;
+                    getch();
+                    goto p;
+                }
+            break;
+        }
+        case 7:
+        {
+               cout<<"\n\n Delete All Record";
+               getch();
+               goto k;
+        }
+        case 8:
+            exit(0);
+        default:
+            cout<<"Invalid Choice..Please Try Again";
+    }
+        getch();
+        goto h;
+  return 0;
+}
